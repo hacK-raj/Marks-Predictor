@@ -14,7 +14,7 @@ This is a simple web application built with **Flask** and **Machine Learning** t
 
 ## 🔥 Live Demo
 
-👉 [Click here to view the deployed project](https://marks-predictor-pk87.onrender.com/predict)
+👉 https://marks-predictor-pk87.onrender.com/predict
 
 
 ---
