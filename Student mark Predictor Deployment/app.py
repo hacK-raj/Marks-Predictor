@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 import numpy as np
 import pandas as pd
 from flask import Flask, request, render_template
@@ -8,7 +6,7 @@ import os
 
 app = Flask(__name__)
 
-model = joblib.load("C:/Users/RAJDEEP SEAL/OneDrive/Desktop/Project 1/Student Mark Predictor Project Deployment/Student mark Predictor Deployment/student_mark_predictor.pkl")
+model = joblib.load(os.path.join(os.path.dirname(__file__), "student_mark_predictor.pkl"))
 setattr(model, "positive", False) 
 
 
@@ -27,12 +25,11 @@ def predict():
     
     #validate input hours
     if input_features[0] <0 or input_features[0] >24:
-        return render_template('index.html', prediction_text='Please enter valid hours between 1 to 24 if you live on the Earth')
+        return render_template('index.html', prediction_text='Please enter valid hours between 1 to 24')
         
 
     output = model.predict([features_value])[0][0].round(2)
 
-    # input and predicted value store in df then save in csv file
     df= pd.concat([df,pd.DataFrame({'Study Hours':input_features,'Predicted Output':[output]})],ignore_index=True)
     print(df)   
     df.to_csv('smp_data_from_app.csv')
@@ -41,5 +38,5 @@ def predict():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # 5000 is a safe local fallback
+    port = int(os.environ.get("PORT", 5000))  
     app.run(host='0.0.0.0', port=port)
