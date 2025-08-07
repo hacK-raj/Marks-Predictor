@@ -1,0 +1,99 @@
+<!-- Student Mark Predictor App GUI -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Student Mark Predictor ML App</title>
+
+  <style>
+    body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:   #0F172A; /* or any background color */
+}
+
+.shape {
+  border: 3px solid  #FACC15;
+  border-radius: 10px;
+  background-color:  #1E3A8A;
+  color:  #FBBF24;
+  padding: 40px;
+  border-radius: 10px;
+  
+}
+
+    h1   {
+  color: #FBBF24;           /* Golden yellow */
+  font-size: 2.5rem;        /* Optional: Adjust as needed */
+  font-weight: bold;        /* Makes it stand out */
+  text-align: center;       /* Optional: Center align */
+  margin-bottom: 20px;}  /* CSS code for heading h1 */
+
+    /* CSS code for button */
+    .button_css {
+    color: #494949 !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #ffffff;
+    padding: 20px;
+    border: 4px solid #494949 !important;
+    display: inline-block;
+    transition: all 0.4s ease 0s;
+    border-radius: 10px;
+    }
+    
+    .button_css:hover {
+    color: #ffffff !important;
+    background: #f6b93b;
+    border-color: #f6b93b !important;
+    transition: all 0.4s ease 0s;
+    }
+  </style>
+
+</head>
+
+<body>
+
+
+  
+
+<div class="shape">
+<div class="login">
+	
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>*** Enter Your Study Hours to Predict Marks ***</h1>
+        
+    	<input align="center" type="number" name="study_hours" placeholder="study hours" required="required" width="48" height="10"/>
+    	<br>
+        
+        <br>
+        
+        <!-- Show button -->
+        <div class="button_cont" align="center"><a class="button_css" href="http://bit.ly/breast-cancer-ml-project" target="_blank" rel="nofollow noopener">
+            <button type="submit" class="btn btn-primary btn-block btn-large"><strong>Predict Marks</strong></button></a>
+        </div>
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+
+ </div>
+ </div>
+ 
+ 
+
+</body>
+</html>
