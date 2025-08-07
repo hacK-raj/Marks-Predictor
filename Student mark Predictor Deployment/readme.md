@@ -14,9 +14,8 @@ This is a simple web application built with **Flask** and **Machine Learning** t
 
 ## 🔥 Live Demo
 
-👉 [Click here to view the deployed project](https://your-render-link.onrender.com)
+👉 [Click here to view the deployed project](https://marks-predictor-pk87.onrender.com/predict)
 
-> Replace the link with your actual Render deployment URL.
 
 ---
 
@@ -105,8 +104,8 @@ The model used is a simple **Linear Regression** model trained using the `Hours 
 ## 🙇‍♂️ Author
 
 **Rajdeep Seal**\
-📧 [Your Email]\
-🔗 [LinkedIn or GitHub profile link]
+📧 [rajdeep.pbsb@gmail.com]\
+
 
 ---
 
